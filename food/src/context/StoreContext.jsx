@@ -5,7 +5,7 @@ export const StoreContext = createContext(null)
 const StoreContextProvider =(props) =>{
    
 const[cartItems,setCartItems] = useState({});
-const url = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+const url = import.meta.env.VITE_API_BASE_URL || "https://food-fronted-zeqy.onrender.com";
 
 const [token,setToken] = useState("");
 const  [food_list,setFoodList] = useState([])
@@ -98,7 +98,7 @@ const loadCartData = async () => {
     }
 
     const response = await axios.post(
-      url+"/api/cart/get",
+   url+"/api/cart/get",
       {},
       {
         headers: {
