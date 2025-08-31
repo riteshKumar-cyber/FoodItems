@@ -11,12 +11,12 @@ const MyOrders = () => {
   const fetchOrders = async () => {
     try {
       const response = await axios.post(
-        `${url}/api/order/userOrders`,
+        `${url}/api/order/userorders`,
         {},
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
