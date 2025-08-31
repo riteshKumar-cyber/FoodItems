@@ -97,7 +97,7 @@ const loadCartData = async () => {
     }
 
     const response = await axios.post(
-      "http://localhost:4000/api/cart/get",
+      url+"/api/cart/get",
       {},
       {
         headers: {
