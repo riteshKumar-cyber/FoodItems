@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
     }));
 
   try {
-    const response = await axios.post("http://localhost:4000/api/order/place", {
+    const response = await axios.post(url+"/api/order/place", {
       items: cartItemsArray,
       amount: getTotalCartAmount(),
       address: data,
