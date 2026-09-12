@@ -61,14 +61,14 @@ console.log("Changed status for order:", orderId, "=>", newStatus);
   <div>
     <p className='order-item-food'>
       {order.items.map((item, index) => {
-        const food = food_list.find(f => f._id === item.itemId);
+        const food = food_list ? food_list.find(f => f._id === item.itemId) : null;
         const name = food ? food.name : 'Unknown';
         return `${name}x${item.quantity}${index !== order.items.length - 1 ? ', ' : ''}`;
       })}
     </p>
     <div>
     <p className="order-item-name">
-      {(order.address?.firstname || order.address?.firstName || '') + ' ' + (order.address?.lastName || order.address?.lastname || '')}
+      {(order.address?.firstName || '') + ' ' + (order.address?.lastName || '')}
     </p>
     <div className='order-item-address'>
       <p>{order.address.street},</p>

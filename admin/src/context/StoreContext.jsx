@@ -5,7 +5,7 @@ export const StoreContext = createContext(null)
 const StoreContextProvider =(props) =>{
    
 const[cartItems,setCartItems] = useState({});
-const url = "https://fooditems-4.onrender.com";
+const url = import.meta.env.VITE_BACKEND_URL || "https://fooditems-4.onrender.com";
 const [token,setToken] = useState("");
 const  [food_list,setFoodList] = useState([])
 
@@ -77,7 +77,9 @@ const getTotalCartAmount = () =>{
   {
     if(cartItems[item]>0){
       let itemInfo = food_list.find ((product)=>product._id ===item)
-    totalAmount += itemInfo.price* cartItems[item];
+      if (itemInfo) {
+        totalAmount += itemInfo.price* cartItems[item];
+      }
     }
     
   }
@@ -97,7 +99,7 @@ const loadCartData = async () => {
     }
 
     const response = await axios.post(
-      url+"/api/cart/get",
+      url + "/api/cart/get",
       {},
       {
         headers: {

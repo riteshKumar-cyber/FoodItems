@@ -7,7 +7,7 @@ import foodModel from "../models/foodModel.js"; // ✅ make sure this is importe
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const frontend_url = "https://food-fronted-zeqy.onrender.com";
+const frontend_url = process.env.FRONTEND_URL || "https://food-fronted-zeqy.onrender.com";
 
 const placeOrder = async (req, res) => {
   try {

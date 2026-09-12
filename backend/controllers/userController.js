@@ -39,7 +39,7 @@ const loginUser = async (req, res) => {
 
 const createToken = (id) =>{
 console.log("JWT_SECRET:", process.env.JWT_SECRET); 
-return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:"10d"});
+return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:"10d"});    /// jwt token fixed here 
 };
 
 // register user

@@ -1,0 +1,58 @@
+services:
+  # 1. Backend Express Web Service
+  - type: web
+    name: food-delivery-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          type: web
+          name: food-delivery-frontend
+          property: host
+
+  # 2. Customer Frontend App (Static Site)
+  - type: web
+    name: food-delivery-frontend
+    env: static
+    rootDir: food
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_BACKEND_URL
+        fromService:
+          type: web
+          name: food-delivery-backend
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # 3. Admin Panel App (Static Site)
+  - type: web
+    name: food-delivery-admin
+    env: static
+    rootDir: admin
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_BACKEND_URL
+        fromService:
+          type: web
+          name: food-delivery-backend
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

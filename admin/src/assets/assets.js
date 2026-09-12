@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://fooditems-4.onrender.com'
+export const url = import.meta.env.VITE_BACKEND_URL || 'https://fooditems-4.onrender.com'
