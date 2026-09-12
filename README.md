@@ -5,10 +5,10 @@ A full-stack **Food Delivery Web Application** built using the **MERN Stack (Mon
 ## 🚀 Live Demo
 
 **Frontend:**
-https://food-fronted-kb45.onrender.com
+https://fooditems-1-o3q3.onrender.com
 
 **GitHub:**
-https://github.com/riteshKumar-cyber
+https://github.com/riteshKumar-cyber/FoodItems
 
 ---
 
@@ -152,7 +152,7 @@ food-delivery/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/riteshKumar-cyber/food-delivery.git
+git clone https://github.com/riteshKumar-cyber/FoodItems.git
 ```
 
 ### 2. Go to the Project Directory
@@ -262,7 +262,7 @@ The project is deployed online using **Render**.
 
 ### Live Project
 
-https://food-fronted-kb45.onrender.com
+https://fooditems-1-o3q3.onrender.com
 
 The frontend communicates with the deployed backend through API requests.
 
