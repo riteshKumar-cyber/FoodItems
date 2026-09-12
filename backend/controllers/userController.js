@@ -37,9 +37,9 @@ const loginUser = async (req, res) => {
 }
 
 
-const createToken = (id) =>{
-console.log("JWT_SECRET:", process.env.JWT_SECRET); 
-return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:"10d"});    /// jwt token fixed here 
+const createToken = (id) => {
+  const secret = process.env.JWT_SECRET || "random_secret_key_123";
+  return jwt.sign({ id }, secret, { expiresIn: "10d" });
 };
 
 // register user
