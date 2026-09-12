@@ -26,8 +26,8 @@ const orderSchema = new mongoose.Schema({
 
   status: {
     type: String,
-    enum: ["Pending", "Food Processing", "Delivered", "Paid"],
-    default: "Pending",
+    enum: ["Pending", "Food Processing", "Out For delivery", "Delivered", "Paid"],
+    default: "Food Processing",
   },
 
   date: { type: Date, default: Date.now },

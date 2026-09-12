@@ -69,7 +69,6 @@ const PlaceOrder = () => {
           response.data.message
         );
       }
-      }
     } catch (error) {
       console.error(
         "Place Order Failed:",

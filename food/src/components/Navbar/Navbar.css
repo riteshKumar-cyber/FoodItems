@@ -16,7 +16,7 @@ width:150px;
 }
 .navbar-right{
   display:flex;
-  slign-items:center;
+  align-items:center;
   gap:40px;
 }
 .navbar button{
