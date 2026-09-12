@@ -31,7 +31,8 @@ const authMiddleware = (req, res, next) => {
     }
 
     // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const secret = process.env.JWT_SECRET || "random_secret_key_123";
+    const decoded = jwt.verify(token, secret);
 
     console.log("JWT Verified Successfully");
     console.log("User ID:", decoded.id);
